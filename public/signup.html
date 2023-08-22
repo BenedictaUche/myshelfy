@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h2>myShelfy</h2>
+      </nav>
+    </header>
+
+    <main>
+      <div class="login-container">
+        <h2>Create a myShelfy account</h2>
+        <p>Enter email and password to login</p>
+        <div class="login">
+          <form action="submit" class="signup-form" id="signup-form">
+            <input class="email"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter email"
+              required
+            />
+            <input class="password"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter password"
+              required
+            />
+            <input type="submit" value="Sign up" class="submit"/>
+            <p>Already have an account? <a href="./index.html">Sign in</a></p>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

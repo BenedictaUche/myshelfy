@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/39d1ce5597.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header style="display: flex; justify-content: space-between;">
+      <nav>
+        <h2>myShelfy</h2>
+      </nav>
+      <div>
+        <h3>Welcome! name</h3>
+        <a href="./index.html" id="dash-logout" type="button">Log Out</a>
+      </div>
+    </header>
+
+    <main class="dashboard">
+        <a href="" type="button" class="article-btn" id="article-btn">Add Article URL</a>
+        <hr>
+        <div class="article-container" id="article-container">
+          <i class="fa-regular fa-circle-xmark" id="cancel"></i>
+          <form action="submit">
+            <input type="text" name="article-url" id="article-url" placeholder="Enter Article URL">
+            <input type="submit" value="Submit" id="submit-btn" >
+          </form>
+        </div>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
