@@ -216,7 +216,11 @@ nav h2 {
     background-color: var(--bg-color-dark);
 }
 
-.fa-circle-xmark {
+.card {
+    position: relative;
+}
+
+.search-cancel {
     position: absolute;
     top: 0;
     right: 0;
@@ -225,6 +229,18 @@ nav h2 {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     background-color: var(--button-color);
+    padding: 0.5rem 0.7rem; 
+    border-top-right-radius: 5px;
+}
+
+.article-cancel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
     padding: 0.5rem 0.7rem; 
     border-top-right-radius: 5px;
 }
@@ -261,3 +277,42 @@ nav h2 {
     width: 100%;
     height: 100%
 }
+
+/* Add any global styles here */
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: calc(33.33% - 20px); /* Adjust the width and spacing as needed */
+    margin: 0 10px;
+  }
+  
+  .card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  /* Add any additional styles for buttons, icons, etc. */
+  
+  /* Style for the close button in the card */
+  .article-cancel {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  
+  /* Add more specific styles as needed */
+  
