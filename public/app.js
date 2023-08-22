@@ -1,17 +1,38 @@
 
 // const axios = require('axios');
 const appDiv = document.getElementById('app');
+const cardDiv = document.getElementById('card-container');
 const articleUrl = document.getElementById("article-url");
+// const scrape = require('./scrape');
+
 
 let users = JSON.parse(localStorage.getItem("users")) || [];
 
-function fetchArticleData(url) {
-  return fetch(`http://localhost:3000/home?url=${url}`)
-    .then((response) => response.json())
+async function fetchArticleData(url) {
+  try {
+    const response = await fetch(`http://localhost:3000/dashboard?url=${encodeURIComponent(url)}`);
+    const data = await response.json();
+    console.log(data);
+    cardDiv.innerHTML = `
+    <div class="card">
+      <img src="${data.imageUrl}" alt="Avatar" style="width:100%">
+      <div class="container">
+        <h4><b>${data.title}</b></h4>
+        <p>${data.description}</p>
+      </div>
+    </div>
+  `;
+    return data;
+    
+  } catch (error) {
+    console.log("Error fetching article data:", error);
+    throw error;
+  }
 }
 
 function displayArticle(data) {
-  appDiv.innerHTML = `
+  console.log("Received data:", data);
+  cardDiv.innerHTML = `
     <div class="card">
       <img src="${data.imageUrl}" alt="Avatar" style="width:100%">
       <div class="container">
