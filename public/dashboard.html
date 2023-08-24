@@ -27,6 +27,11 @@
     <main class="dashboard">
         <a href="" type="button" class="article-btn" id="article-btn">Add Article URL</a>
         <hr>
+        <select name="Filter" id="options" class="select-options">
+          <option value="all">All</option>
+          <option value="option1">Favourites</option>
+      </select>
+      
         <div class="article-container" id="article-container">
           <i class="fa-regular fa-circle-xmark search-cancel" id="cancel"></i>
           <form action="submit">
@@ -36,7 +41,7 @@
 
           
         </div>
-        <div class="card-container" id="card-container"></div>
+        <div class="card-container card-grid" id="card-container"></div>
     </main>
 
     <script src="/server/scrape.js"></script>

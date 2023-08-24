@@ -2,11 +2,13 @@ const express = require('express');
 const cors = require('cors');
 const cheerio = require('cheerio');
 const axios = require('axios');
-
+const path = require('path');
 
 
 const app = express();
 app.use(cors());
+app.use(express.static(path.join(__dirname, 'public')));
+
 
 app.get('/dashboard', async (req, res) => {
     const url = req.query.url;
