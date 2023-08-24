@@ -16,13 +16,13 @@ Welcome to myShelfy, a web application for sharing and managing articles! This p
 - cd myShelfy
 
 2. Install dependencies for the server:
-- cd server
 - npm install
 
 
 ## Usage
 
 1. Run the server:
+- cd server
 - node scrape.js
 
 2. Open your web browser and navigate to `http://localhost:3000` to access the myShelfy web application.

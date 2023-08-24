@@ -1,4 +1,28 @@
 {
+  "name": "myShelfie",
+  "version": "1.0.0",
+  "description": "A personal library app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "library",
+    "books",
+    "book",
+    "shelf",
+    "shelfie",
+    "myshelfie",
+    "myshelf",
+    "my shelf",
+    "my shelfie",
+    "myshelfie.com",
+    "myshelfie.com"
+  ],
+  "author": "Benedicta Onyebuchi",
+  "license": "ISC",
   "dependencies": {
     "axios": "^1.4.0",
     "cheerio": "^1.0.0-rc.12",

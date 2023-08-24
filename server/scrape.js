@@ -7,7 +7,7 @@ const path = require('path');
 
 const app = express();
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 
 
 app.get('/dashboard', async (req, res) => {
@@ -16,7 +16,7 @@ app.get('/dashboard', async (req, res) => {
         const response = await axios.get(url);
         const $ = cheerio.load(response.data);
         const title = $('meta[property="og:title"]').attr('content');
-        const description = $('meta[name="description"]').attr('content'); // Correct selector
+        const description = $('meta[name="description"]').attr('content');
         const imageUrl = $('meta[property="og:image"]').attr('content');
     
         if (!title || !description || !imageUrl) {
