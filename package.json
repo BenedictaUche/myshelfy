@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "",
-    "build": ""
+    "dev": "npm run build && webpack serve --open --mode development",
+    "build": "webpack"
   },
   "keywords": [
     "library",
