@@ -4,18 +4,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.getElementById("card-container");
   const articleUrl = document.getElementById("article-url");
   const articleSubmitBtn = document.getElementById("submit-btn");
-  // const registerForm = document.getElementById("signup-form");
-  // const loginForm = document.getElementById("login-form");
+
   const dashLogout = document.getElementById("dash-logout");
   const articleBtn = document.getElementById("article-btn");
   const articleContainer = document.getElementById("article-container");
   const articleCloseBtn = document.getElementById("cancel");
   const deleteArticleBtn = document.querySelector("delete-article");
-  const shareArticleBtn = document.getElementById("share-article");
-  const likeArticleBtn = document.getElementById("like-article");
+  const portfolioBtn = document.querySelector(".portfolio");
+  const profileCover = document.getElementById("profile_cover");
+  const editIcon = profileCover.querySelector(".edit-img-pen");
+  const imageInput = document.getElementById("imageInput");
+  const profileImgCover = document.getElementById('profile-img-cover');
+  const editProfileIcon = document.querySelector('.edit-profile-img');
+  const imageProfileInput = document.getElementById('imageProfile');
 
   let users = JSON.parse(localStorage.getItem("users")) || [];
   let articles = JSON.parse(localStorage.getItem("articles")) || [];
+
   let articleCount = 0;
 
   function displayArticle(data, articleId) {
@@ -28,10 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <p>${data.description}</p>
       </div>
       <div class='features'>
-        <button class="btn btn-primary like-article"> <i class="fa-regular fa-star"></i></button>
+        <button class="btn btn-primary like-article" title='like'> <i class="fa-regular fa-star"></i></button>
         <button><a href="${articleUrl.value}" target="_blank" class="btn btn-primary">Read More</a></button>
-        <button class='share-article'><i class="fa-regular fa-share-from-square"></i></button>
-        <button class='delete-article'> <i class="fa-regular fa-trash-can" ></i></button>
+        <button class='share-article' title='share'><i class="fa-regular fa-share-from-square"></i></button>
+        <button class='delete-article' title='delete'> <i class="fa-regular fa-trash-can" ></i></button>
       </div>
     `;
 
@@ -62,8 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
       card.remove();
     });
 
-    // to share the article
+    // to display the user name in the dashboard
 
+    // const userEmail = localStorage.getItem("email");
+    // splitWord = userEmail.split("@");
+    // let userName = splitWord[0] || "Guest";
+
+    // let dashboardLog = document.createElement("h3");
+    // dashboardLog.textContent = "Welcome " + userName + "";
+    // dashlogout.appendChild(dashboardLog);
+
+    // console.log(userName);
+
+    // to share the article
     const shareButton = card.querySelector(".share-article");
     shareButton.addEventListener("click", (e) => {
       e.preventDefault();
@@ -124,11 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
       articles.push(article);
       localStorage.setItem("articles", JSON.stringify(articles));
 
-      const userArticles =
-        JSON.parse(localStorage.getItem("userArticles")) || [];
-      userArticles.push(article);
-      localStorage.setItem("userArticles", JSON.stringify(userArticles));
-
       displayArticle(data);
 
       return data;
@@ -155,16 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     console.error("Article submit button not found");
-  }
-
-  if (deleteArticleBtn) {
-    deleteArticleBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const card = document.querySelector(".card");
-      card.remove();
-    });
-  } else {
-    console.error("Delete article button not found");
   }
 
   function registerUser(email, password) {
@@ -205,6 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     console.error("Registration form element not found");
+  }
+
+  if (portfolioBtn) {
+    portfolioBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      redirectTo("./portfolio.html");
+    });
+  } else {
+    console.error("Cannot get access to portfolio");
   }
 
   // Event listener for user login
@@ -253,20 +263,57 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Article-related elements not found");
   }
 
-  // function to delete article
-  function deleteArticle() {
-    const card = document.querySelector(".card");
-    card.remove();
+  // Event listener for profile cover image
+
+  if (editIcon) {
+    editIcon.addEventListener("click", () => {
+      imageInput.click();
+    });
+  } else {
+    console.error("Cannot get access to edit icon");
   }
 
-  if (deleteArticleBtn) {
-    deleteArticleBtn.addEventListener("click", (e) => {
+  if (imageInput) {
+    imageInput.addEventListener("change", (e) => {
       e.preventDefault();
-      deleteArticle();
+      const file = e.target.files[0];
+      if (file) {
+        const img = profileCover.querySelector("img");
+        img.src = URL.createObjectURL(file);
+        // Revoke the object URL to prevent memory leaks
+        
+      } else {
+        console.error("No file chosen");
+      }
     });
+  } else {
+    console.error("Cannot get access to image input");
   }
+
+
+  if(editProfileIcon){
+    editProfileIcon.addEventListener('click', () => {
+      imageProfileInput.click();
+    });
+  } else {
+    console.error("Cannot get access to edit profile icon")
+  }
+
+  if(imageProfileInput){
+    imageProfileInput.addEventListener("change", (e) => {
+      e.preventDefault();
+      const file = e.target.files[0];
+      if(file) {
+        const img = profileImgCover.querySelector("img");
+        img.src = URL.createObjectURL(file);
+      } else {
+        console.error("No file chosen");
+      }
+    });
+  } else {
+    console.error("Cannot get access to profile image input");
+  }
+
 
 
 });
-
-

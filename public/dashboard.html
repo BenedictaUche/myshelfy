@@ -11,41 +11,79 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400&display=swap"
       rel="stylesheet"
     />
-    <script src="https://kit.fontawesome.com/39d1ce5597.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/39d1ce5597.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <header style="display: flex; justify-content: space-between;">
+    <header style="display: flex; justify-content: space-between">
       <nav>
-        <h2>myShelfy</h2>
+        <h2 style="color: black">myShelfy</h2>
       </nav>
-      <div>
-        <h3>Welcome! name</h3>
+      <div class="dash-logout">
         <a href="./index.html" id="dash-logout" type="button">Log Out</a>
       </div>
     </header>
 
     <main class="dashboard">
-        <a href="" type="button" class="article-btn" id="article-btn">Add Article URL</a>
-        <hr>
-        <select name="Filter" id="options" class="select-options">
-          <option value="all">All</option>
-          <option value="option1">Favourites</option>
-      </select>
-      
-        <div class="article-container" id="article-container">
-          <i class="fa-regular fa-circle-xmark search-cancel" id="cancel"></i>
-          <form action="submit">
-            <input type="text" name="article-url" id="article-url" placeholder="Enter Article URL">
-            <input type="submit" value="Submit" id="submit-btn" >
-          </form>
+      <!-- users are able to add a profile cover image and users to be able to change it anytime -->
+      <div class="profile-cover" id="profile_cover">
+        <img
+          src="https://via.placeholder.com/300x200"
+          alt="Placeholder Image"
+        />
+        <i class="fa-solid fa-pen edit-img-pen"></i>
+      </div>
+      <input type="file" id="imageInput" style="display: none" />
 
-          
+      <div class="profile_img" >
+        <div class="profile-img-cont" id="profile-img-cover">
+          <img src="https://via.placeholder.com/300x200" alt="Profile placeholder">
+          <i class="fa-solid fa-pen edit-profile-img" ></i>
         </div>
-        <div class="card-container card-grid" id="card-container"></div>
+        <input type="file" id="imageProfile" style="display: none" />
+
+        <div class="profile-cont">
+
+          <div>
+            <h2>Benedicta Onyebuchi</h2>
+            <p>Technical Writer</p>
+            <p>An avid reader and researcher</p>
+          </div>
+
+          <div>
+            <li class="fa-solid fa-link"></li>
+          </div>
+
+        </div>
+      </div>
+
+      <a href="" type="button" class="article-btn" id="article-btn"
+        >Add Article URL</a
+      >
+      <hr />
+      <select name="Filter" id="options" class="select-options">
+        <option value="all">All</option>
+        <option value="option1">Favourites</option>
+      </select>
+
+      <div class="article-container" id="article-container">
+        <i class="fa-regular fa-circle-xmark search-cancel" id="cancel"></i>
+        <form action="submit">
+          <input
+            type="text"
+            name="article-url"
+            id="article-url"
+            placeholder="Enter Article URL"
+          />
+          <input type="submit" value="Submit" id="submit-btn" />
+        </form>
+      </div>
+      <div class="card-container card-grid" id="card-container"></div>
     </main>
 
     <script src="/server/scrape.js"></script>
     <script src="./app.js"></script>
-    
   </body>
 </html>

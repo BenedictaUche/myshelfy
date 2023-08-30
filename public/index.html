@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Raleway:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="app"></div>
     <header>
-      <nav>
+      <nav class="auth-header">
         <h2>myShelfy</h2>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./signup.html">Signup</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <button class="portfolio">Create Portfolio</button>
+        </ul>
       </nav>
     </header>
 
@@ -23,21 +32,23 @@
         <p>Enter email and password to login</p>
         <div class="login">
           <form action="submit" class="login-form" id="login-form">
-            <input class="email"
+            <input
+              class="email"
               type="email"
               name="email"
               id="email"
               placeholder="Enter email"
               required
             />
-            <input class="password"
+            <input
+              class="password"
               type="password"
               name="password"
               id="password"
               placeholder="Enter password"
               required
             />
-            <input type="submit" value="Login" class="submit"/>
+            <input type="submit" value="Login" class="submit" />
             <p><a href="./signup.html">Create Account</a></p>
           </form>
         </div>

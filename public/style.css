@@ -3,7 +3,7 @@
     --text: 'Raleway', sans-serif;
     --bg-color-light: rgb(215, 130, 173);
   --bg-color-dark: rgb(140, 34, 71);
-  --button-color: #c76d9f;
+  --button-color: #C6A7A5;
 
 }
 
@@ -13,8 +13,12 @@
     box-sizing: border-box;
 }
 
-body{
+/* body{
     background: linear-gradient(to right, var(--bg-color-light), var(--bg-color-dark));
+} */
+
+body {
+    background-color: #F7F6F1;
 }
 
 a {
@@ -37,6 +41,52 @@ nav{
     padding: 1rem 2rem;
 }
 
+.auth-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 2rem;
+    background-color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    margin: 0 auto;
+}
+
+.auth-header ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.auth-header ul li {
+    margin: 0 1rem;
+    font-family: var(--text);
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.auth-header ul li:hover {
+    color: var(--button-color);
+}
+
+.auth-header ul button {
+    font-family: var(--text);
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--button-color);
+    border: none;
+    outline: none;
+    padding: 0.7rem 1.8rem;
+}
+
+.auth-header ul button:hover {
+    background-color: var(--bg-color-dark);
+}
+
 nav h2 {
     font-family: var(--font-logo-text);
     font-size: 2rem;
@@ -46,27 +96,46 @@ nav h2 {
 
 /* Style for login page */
 
+
 .login-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     flex-direction: column;
-    height: 100vh;
+    padding: 5rem 0;
+    background-color: #FDF9F3;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 30rem;
+    margin: 3rem auto;
 }
 
 .login-container h2 {
     font-family: var(--text);
     font-size: 2rem;
-    color: #fff;
+    color: #000;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+.login a {
+    font-family: var(--text);
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.login a:hover {
+    color: var(--button-color);
 }
 
 .login-container p {
     font-family: var(--text);
     font-size: 15px;
-    color: #fff;
+    color: #000;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -116,7 +185,7 @@ nav h2 {
 }
 
 .login-form input::placeholder, .signup-form input::placeholder {
-    color: #d3d3d3;
+    color: #484848;
 }
 
 
@@ -135,6 +204,23 @@ nav h2 {
     font-family: var(--text);
     font-size: 15px;
     color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--button-color);
+    padding: 0.7rem 1.8rem; 
+}
+
+.dash-logout {
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    padding: 0.7rem 1.8rem; 
+}
+
+.dash-logout h3 {
+    font-family: var(--text);
+    font-size: 15px;
+    color: #000;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     background-color: var(--button-color);
@@ -334,6 +420,10 @@ nav h2 {
     color: var(--button-color);
  }
 
+ .liked:visited {
+    color: #E2D4C7;
+ }
+
  select {
     width: 300px;
     height: 40px;
@@ -354,3 +444,81 @@ nav h2 {
     }
  }
 
+
+ /* Styling for profile page */
+.profile_form_div {
+    margin: 3rem 4rem;
+}
+
+.profile_form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.profile_form input {
+    padding: 1.2rem 1rem;
+}
+.profile-cover {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile-cover img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.edit-img-pen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem 0.7rem; 
+    border-radius: 50%;
+    background-color: #484848;
+}
+
+
+
+.profile_img {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem 0;
+}
+
+.profile-img-cont {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.profile-img-cont i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    padding: 0.5rem 0.7rem; 
+    border-radius: 50%;
+    background-color: #484848;
+}
+
+.profile_img div img {
+    width: 100px;
+    height: 80px;
+    border-radius: 50%;
+
+}
