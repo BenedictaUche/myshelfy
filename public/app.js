@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const articleContainer = document.getElementById("article-container");
   const articleCloseBtn = document.getElementById("cancel");
   const deleteArticleBtn = document.querySelector("delete-article");
-  const portfolioBtn = document.querySelector(".portfolio");
+  const portfolioBtn = document.getElementById("create_portfolio");
   const profileCover = document.getElementById("profile_cover");
   const editIcon = profileCover.querySelector(".edit-img-pen");
   const imageInput = document.getElementById("imageInput");
@@ -210,13 +210,11 @@ document.addEventListener("DOMContentLoaded", () => {
   //   console.error("Registration form element not found");
   // }
 
-  if (portfolioBtn) {
-    portfolioBtn.addEventListener("click", (e) => {
+  if(portfolioBtn){
+    portfolioBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      redirectTo("./portfolio.html");
+      redirectTo('./portfolio.html');
     });
-  } else {
-    console.error("Cannot get access to portfolio");
   }
 
   // Event listener for user login

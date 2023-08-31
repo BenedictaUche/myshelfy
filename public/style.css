@@ -94,6 +94,8 @@ nav h2 {
 }
 
 
+
+
 /* Style for login page */
 
 
@@ -194,7 +196,7 @@ nav h2 {
 /* Dashboard Page */
 
 .dashboard {
-    margin: 1rem;
+    margin: 1rem 0;
 }
 
 #dash-logout {
@@ -231,7 +233,11 @@ nav h2 {
     background-color: var(--bg-color-dark);
 }
 
-.dashboard {
+.profile_img {
+    margin: 1rem 2.8rem;
+}
+
+.below-profile {
     margin: 1rem 2.8rem;
 }
 
@@ -445,9 +451,47 @@ nav h2 {
  }
 
 
- /* Styling for profile page */
+ /* Styling for create portfolio page */
 .profile_form_div {
     margin: 3rem 4rem;
+    padding: 2rem 2rem;
+    font-family: var(--text);
+}
+
+.profile_form_div button {
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin: 2rem auto;
+    display: block;
+    padding: 0 1rem;
+    font-family: var(--text);
+    font-size: 15px;
+    color: #fff;
+    outline: none;
+    background-color: var(--button-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile_form_div button:hover {
+    background-color: var(--bg-color-dark);
+}
+
+.profile_form_div textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    border: 2px solid var(--button-color);
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+    font-family: var(--text);
+    font-size: 15px;
+    color: #000;
+    outline: none;
+    outline-color: var(--button-color);
+    resize: none;
 }
 
 .profile_form {
@@ -459,6 +503,13 @@ nav h2 {
 
 .profile_form input {
     padding: 1.2rem 1rem;
+    border-radius: 5px;
+    border: 2px solid var(--button-color);
+    font-family: var(--text);
+    font-size: 15px;
+    color: #000;
+    outline: none;
+    outline-color: var(--button-color);
 }
 .profile-cover {
     position: relative;
@@ -497,10 +548,25 @@ nav h2 {
     padding: 3rem 0;
 }
 
+.profile-cont {
+    font-family: var(--text);
+}
+
+.names-and-profile {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+   
+}
+
 .profile-img-cont {
     position: relative;
-    border-radius: 5px;
     overflow: hidden;
+}
+
+.profile-img-cont img {
+    width: 100px;
+    height: 80px;
 }
 
 .profile-img-cont i{
@@ -522,3 +588,22 @@ nav h2 {
     border-radius: 50%;
 
 }
+
+/* styling for footer */
+
+footer p {
+    text-align: center;
+    padding: 1rem 0;
+    font-family: var(--text);
+    font-size: 15px;
+    color: #000;
+}
+
+footer p a {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+
+/* Styling for create portfolio page */
+

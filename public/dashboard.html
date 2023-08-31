@@ -16,15 +16,25 @@
       crossorigin="anonymous"
     ></script>
   </head>
+
   <body>
-    <header style="display: flex; justify-content: space-between">
-      <nav>
-        <h2 style="color: black">myShelfy</h2>
+    <header>
+      <nav class="auth-header">
+        <h2>myShelfy</h2>
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./signup.html">Signup</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="">Blog</a></li>
+        </ul>
+          <div class="dash-logout">
+            <a href="./index.html" id="dash-logout" type="button">Log Out</a>
+          </div>
+        
       </nav>
-      <div class="dash-logout">
-        <a href="./index.html" id="dash-logout" type="button">Log Out</a>
-      </div>
     </header>
+
+
 
     <main class="dashboard">
       <!-- users are able to add a profile cover image and users to be able to change it anytime -->
@@ -37,16 +47,18 @@
       </div>
       <input type="file" id="imageInput" style="display: none" />
 
-      <div class="profile_img" >
+      <div class="profile_img">
         <div class="profile-img-cont" id="profile-img-cover">
-          <img src="https://via.placeholder.com/300x200" alt="Profile placeholder">
-          <i class="fa-solid fa-pen edit-profile-img" ></i>
+          <img
+            src="https://via.placeholder.com/300x200"
+            alt="Profile placeholder"
+          />
+          <i class="fa-solid fa-pen edit-profile-img"></i>
         </div>
         <input type="file" id="imageProfile" style="display: none" />
 
         <div class="profile-cont">
-
-          <div>
+          <div class="names-and-profile">
             <h2>Benedicta Onyebuchi</h2>
             <p>Technical Writer</p>
             <p>An avid reader and researcher</p>
@@ -55,33 +67,38 @@
           <div>
             <li class="fa-solid fa-link"></li>
           </div>
-
         </div>
       </div>
 
-      <a href="" type="button" class="article-btn" id="article-btn"
-        >Add Article URL</a
-      >
-      <hr />
-      <select name="Filter" id="options" class="select-options">
-        <option value="all">All</option>
-        <option value="option1">Favourites</option>
-      </select>
+      <div class="below-profile">
+        <a href="" type="button" class="article-btn" id="article-btn"
+          >Add Article URL</a
+        >
+        <hr />
+        <select name="Filter" id="options" class="select-options">
+          <option value="all">All</option>
+          <option value="option1">Favourites</option>
+        </select>
 
-      <div class="article-container" id="article-container">
-        <i class="fa-regular fa-circle-xmark search-cancel" id="cancel"></i>
-        <form action="submit" class="article-url-form">
-          <input
-            type="text"
-            name="article-url"
-            id="article-url"
-            placeholder="Enter Article URL"
-          />
-          <input type="submit" value="Submit" id="submit-btn" />
-        </form>
+        <div class="article-container" id="article-container">
+          <i class="fa-regular fa-circle-xmark search-cancel" id="cancel"></i>
+          <form action="submit" class="article-url-form">
+            <input
+              type="text"
+              name="article-url"
+              id="article-url"
+              placeholder="Enter Article URL"
+            />
+            <input type="submit" value="Submit" id="submit-btn" />
+          </form>
+        </div>
+        <div class="card-container card-grid" id="card-container"></div>
       </div>
-      <div class="card-container card-grid" id="card-container"></div>
     </main>
+
+    <footer>
+      <p>Developed with 💖 by <a href="https://github.com/BenedictaUche">Benedicta</a> &copy; 2023 myShelfy</p>
+    </footer>
 
     <script src="/server/scrape.js"></script>
     <script src="./app.js"></script>
