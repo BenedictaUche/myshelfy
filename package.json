@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "npm run build && webpack serve --open --mode development",
+    "dev": "npm run build",
     "build": "webpack"
   },
   "keywords": [
