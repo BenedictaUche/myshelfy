@@ -4,9 +4,7 @@
   "description": "A personal library app",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "npm build",
-    "build": "npm run build"
+    "start": "node app.js"
   },
   "keywords": [
     "library",
