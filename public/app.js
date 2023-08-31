@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.getElementById("card-container");
   const articleUrl = document.getElementById("article-url");
   const articleSubmitBtn = document.getElementById("submit-btn");
+  const articleUrlForm = document.querySelector(".article-url-form");
 
   const dashLogout = document.getElementById("dash-logout");
   const articleBtn = document.getElementById("article-btn");
@@ -159,6 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const articleData = response.data;
           console.log(articleData);
           displayArticle(articleData);
+          articleUrlForm.reset();
         } catch (error) {
           console.error("Error fetching article data:", error);
         }
@@ -168,45 +170,45 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Article submit button not found");
   }
 
-  function registerUser(email, password) {
-    // To check if the user already exists
-    const userExists = users.some((user) => user.email === email);
-    if (userExists) {
-      alert("User already exists. Please login or use another email");
-      return;
-    }
+  // function registerUser(email, password) {
+  //   // To check if the user already exists
+  //   const userExists = users.some((user) => user.email === email);
+  //   if (userExists) {
+  //     alert("User already exists. Please login or use another email");
+  //     return;
+  //   }
 
-    users.push({
-      email: email,
-      password: password,
-    });
-    localStorage.setItem("users", JSON.stringify(users));
-  }
+  //   users.push({
+  //     email: email,
+  //     password: password,
+  //   });
+  //   localStorage.setItem("users", JSON.stringify(users));
+  // }
 
-  function loginUser(email, password) {
-    return users.find((user) => {
-      return user.email === email && user.password === password;
-    });
-  }
+  // function loginUser(email, password) {
+  //   return users.find((user) => {
+  //     return user.email === email && user.password === password;
+  //   });
+  // }
 
   function redirectTo(url) {
     window.location.href = url;
   }
 
   // Event listener for user registration
-  const register = document.getElementById("signup-form");
-  if (register) {
-    register.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const emailValue = document.getElementById("email").value;
-      const passwordValue = document.getElementById("password").value;
-      registerUser(emailValue, passwordValue);
-      console.log(users);
-      redirectTo("./dashboard.html");
-    });
-  } else {
-    console.error("Registration form element not found");
-  }
+  // const register = document.getElementById("signup-form");
+  // if (register) {
+  //   register.addEventListener("submit", (e) => {
+  //     e.preventDefault();
+  //     const emailValue = document.getElementById("email").value;
+  //     const passwordValue = document.getElementById("password").value;
+  //     registerUser(emailValue, passwordValue);
+  //     console.log(users);
+  //     redirectTo("./dashboard.html");
+  //   });
+  // } else {
+  //   console.error("Registration form element not found");
+  // }
 
   if (portfolioBtn) {
     portfolioBtn.addEventListener("click", (e) => {
@@ -218,23 +220,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Event listener for user login
-  const login = document.getElementById("login-form");
-  if (login) {
-    login.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const emailValue = document.getElementById("email").value;
-      const passwordValue = document.getElementById("password").value;
-      const user = loginUser(emailValue, passwordValue);
-      if (user) {
-        alert("Login successful");
-        redirectTo("./dashboard.html");
-      } else {
-        alert("Login failed");
-      }
-    });
-  } else {
-    console.error("Login form element not found");
-  }
+  // const login = document.getElementById("login-form");
+  // if (login) {
+  //   login.addEventListener("submit", (e) => {
+  //     e.preventDefault();
+  //     const emailValue = document.getElementById("email").value;
+  //     const passwordValue = document.getElementById("password").value;
+  //     const user = loginUser(emailValue, passwordValue);
+  //     if (user) {
+  //       alert("Login successful");
+  //       redirectTo("./dashboard.html");
+  //     } else {
+  //       alert("Login failed");
+  //     }
+  //   });
+  // } else {
+  //   console.error("Login form element not found");
+  // }
 
   // Event listener for user logout
 
