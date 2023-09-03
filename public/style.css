@@ -458,7 +458,7 @@ nav h2 {
     font-family: var(--text);
 }
 
-.profile_form_div button {
+#profile_form_submit {
     width: 100px;
     height: 40px;
     border-radius: 5px;
@@ -475,7 +475,7 @@ nav h2 {
     transition: all 0.3s ease-in-out;
 }
 
-.profile_form_div button:hover {
+#profile_form_submit:hover {
     background-color: var(--bg-color-dark);
 }
 
@@ -501,8 +501,8 @@ nav h2 {
     gap: 2rem;
 }
 
-.profile_form input {
-    padding: 1.2rem 1rem;
+.profile_form input:not([type="submit"]) {
+    padding: 1.1rem 1.5rem;
     border-radius: 5px;
     border: 2px solid var(--button-color);
     font-family: var(--text);

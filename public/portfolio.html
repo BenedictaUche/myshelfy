@@ -35,28 +35,35 @@
                 <img src="" alt="" srcset="">
             </div>
             <div class="profile_form_div">
-                <form action="submit" id="profile_form" class="profile_form">
-                    <label for="first_name">First Name</label>
-                    <input type="text" name="first_name" id="" placeholder="Enter first name">
-                    <label for="last_name">Last Name</label>
-                    <input type="text" name="last_name" id="" placeholder="Enter last name">
+                <form action="submit" id="create_portfolio_form" class="profile_form">
+                    <label for="first_name">First Name <span style="color: red; font-size: 40px;">*</span></label>
+                    <input type="text" name="first_name" id="portfolio_first_name" placeholder="Enter first name" required>
+                    <label for="last_name">Last Name <span style="color: red; font-size: 40px;">*</span></label>
+                    <input type="text" name="last_name" id="portfolio_last_name" placeholder="Enter last name" required>
                     <label for="email">What's your email?</label>
-                    <input type="email" name="email" id="" placeholder="example@example.com">
+                    <input type="email" name="email" id="portfolio_email" placeholder="example@example.com">
                     <label for="bio">Tell people about you</label>
-                    <textarea name="bio" id="" cols="30" rows="10"></textarea>
+                    <textarea name="bio" id="portfolio_description" cols="30" rows="10"></textarea>
                     <label for="linkedin_url">Linkedin Url</label>
-                    <input type="text" name="linkedin_url" id="" placeholder="https://www.linkedin.com/in/example.com">
+                    <input type="text" name="linkedin_url" id="portfolio_linkedin" placeholder="https://www.linkedin.com/in/example.com">
                     <label for="twitter_url">Twitter Url</label>
-                    <input type="text" name="twitter_url" id="" placeholder="https://twitter.com/username">
+                    <input type="text" name="twitter_url" id="portfolio_twitter" placeholder="https://twitter.com/username">
                     <label for="github_url">Github link</label>
-                    <input type="text" name="github_url" id="" placeholder="https://github.com/username">
+                    <input type="text" name="github_url" id="portfolio_github" placeholder="https://github.com/username">
                     <label for="website_url">Website Url</label>
-                    <input type="text" name="website_url" id="" placeholder="www.example.com">
+                    <input type="text" name="website_url" id="portfolio_website" placeholder="www.example.com">
+                    <input type="submit" id="profile_form_submit" value="Submit">
+                    <!-- <button id="profile_form_submit">Submit</button> -->
                 </form>
-                <button>Submit</button>
+                
             </div>
         </div>
       </main>
+
+      <footer>
+        <p>Developed with 💖 by <a href="https://github.com/BenedictaUche">Benedicta</a> &copy; 2023 myShelfy</p>
+      </footer>
     
+      <script src="./app.js"></script>
 </body>
 </html>

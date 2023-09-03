@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteArticleBtn = document.querySelector("delete-article");
   const portfolioBtn = document.getElementById("create_portfolio");
   const profileCover = document.getElementById("profile_cover");
-  const editIcon = profileCover.querySelector(".edit-img-pen");
+  const editIcon = document.querySelector(".edit-img-pen");
   const imageInput = document.getElementById("imageInput");
   const profileImgCover = document.getElementById('profile-img-cover');
   const editProfileIcon = document.querySelector('.edit-profile-img');
@@ -313,6 +313,50 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error("Cannot get access to profile image input");
   }
+
+
+  // get values after submission of create portfolio form
+
+  const createPortfolioForm = document.getElementById("create_portfolio_form");
+  if (createPortfolioForm) {
+    createPortfolioForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const portfolioName = document.getElementById("portfolio_first_name")
+      let portfolioNameValue = portfolioName.value;
+      const portfolioLastName = document.getElementById("portfolio_last_name")
+      let portfolioLastNameValue = portfolioLastName.value;
+      const portfolioEmail = document.getElementById("portfolio_email")
+      let portfolioEmailValue = portfolioEmail.value;
+      const portfolioDescription = document.getElementById("portfolio_description")
+      let portfolioDescriptionValue = portfolioDescription.value;
+      const portfolioLinkedIn = document.getElementById("portfolio_linkedin")
+      let portfolioLinkedInValue = portfolioLinkedIn.value;
+      const portfolioTwitter = document.getElementById("portfolio_twitter")
+      let portfolioTwitterValue = portfolioTwitter.value;
+      const portfolioGithub = document.getElementById("portfolio_github")
+      let portfolioGithubValue = portfolioGithub.value;
+      const portfolioWebsite = document.getElementById("portfolio_website")
+      let portfolioWebsiteValue = portfolioWebsite.value;
+
+
+      const portfolio = {
+        portfolioName: portfolioNameValue,
+        portfolioLastName: portfolioLastNameValue,
+        portfolioEmail: portfolioEmailValue,
+        portfolioDescription: portfolioDescriptionValue,
+        portfolioLinkedIn: portfolioLinkedInValue,
+        portfolioTwitter: portfolioTwitterValue,
+        portfolioGithub: portfolioGithubValue,
+        portfolioWebsite: portfolioWebsiteValue,
+      }
+     
+      console.log(portfolio);
+      redirectTo("./dashboard.html");
+    });
+  } else {
+    console.error("Cannot get access to create portfolio form");
+  }
+
 
 
 
